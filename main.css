@@ -1,0 +1,737 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+a {
+  text-decoration: none;
+}
+
+/* --- Montserrat--- */
+@font-face {
+  font-family: Montserrat-VariableFon;
+  src: url(fonts/montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(fonts/montserrat/static/Montserrat-Bold.ttf);
+}
+@font-face {
+  font-family: Montserrat-ExtraBold;
+  src: url(fonts/montserrat/static/Montserrat-ExtraBold.ttf);
+}
+@font-face {
+  font-family: Montserrat-ExtraLight;
+  src: url(fonts/montserrat/static/Montserrat-ExtraLight.ttf);
+}
+@font-face {
+  font-family: Montserrat-Light;
+  src: url(fonts/montserrat/static/Montserrat-Light.ttf);
+}
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url(fonts/montserrat/static/Montserrat-Medium.ttf);
+}
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url(fonts/montserrat/static/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url(fonts/montserrat/static/Montserrat-SemiBold.ttf);
+}
+@font-face {
+  font-family: Montserrat-Thin;
+  src: url(fonts/montserrat/static/Montserrat-Thin.ttf);
+}
+
+/* ---- Poppins ---- */
+@font-face {
+  font-family: Poppins-Black;
+  src: url(fonts/poppins/Poppins-Black.ttf);
+}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url(fonts/poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: Poppins-ExtraBold;
+  src: url(fonts/poppins/Poppins-ExtraBold.ttf);
+}
+@font-face {
+  font-family: Poppins-ExtraLight;
+  src: url(fonts/poppins/Poppins-ExtraLight.ttf);
+}
+@font-face {
+  font-family: Poppins-Light;
+  src: url(fonts/poppins/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: Poppins-Medium;
+  src: url(fonts/poppins/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: Poppins-Regular;
+  src: url(fonts/poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url(fonts/poppins/Poppins-SemiBold.ttf);
+}
+@font-face {
+  font-family: Poppins-Thin;
+  src: url(fonts/poppins/Poppins-Thin.ttf);
+}
+
+::-webkit-scrollbar {
+  width: 1.0625rem;
+}
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(201, 201, 201);
+  box-shadow: 0 0 10px #c2bdbd inset;
+}
+
+/* ---- start nav ---- */
+#header {
+  z-index: 99;
+  background-color: transparent;
+}
+nav .logo {
+  font-family: Montserrat-ExtraBold;
+  font-size: 18px;
+  letter-spacing: 0.078125rem;
+  color: #fff;
+}
+nav .navbar-brand:hover {
+  color: #fff;
+}
+nav .navbar-toggler i {
+  color: #fff;
+}
+nav .nav-links li {
+  padding: 15px 20px;
+  width: fit-content;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: #fff;
+}
+nav .nav-links li a {
+  position: relative;
+  font-size: 14px;
+  padding: 0 !important;
+  font-family: Poppins-Regular;
+  font-weight: 400 !important;
+  color: #fff;
+}
+nav .nav-links li .active::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+nav .nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+nav .nav-links li:hover a::after {
+  width: 100%;
+  height: 2px;
+}
+nav .nav-links li:hover a {
+  color: #fff;
+}
+.navbar .navbar-toggler {
+  color: #fff;
+  border-color: #fff;
+  font-size: 25px;
+}
+/* ----- -- js ----- */
+#header.scrolled nav .container {
+  padding-top: 0px;
+  transition: 0.3s;
+}
+#header.scrolled {
+  background-color: #fff;
+  transition: 0.8s;
+}
+#header.scrolled nav .logo {
+  color: #000;
+  transition: 0.8s;
+}
+#header.scrolled nav .navbar-toggler i {
+  color: #000;
+  transition: 0.8s;
+}
+#header.scrolled .nav-links li a {
+  color: #000;
+  transition: 0.8s;
+}
+#header.scrolled .nav-links li a::after {
+  background-color: #000;
+  transition: 0.8s;
+}
+/* ----- end nav ----- */
+
+/* ---- start home --- */
+#home {
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.66)),
+    url(images/bg.jpg);
+}
+#home .container h1 {
+  font-size: 50px;
+  padding-bottom: 10px;
+  font-family: Montserrat-ExtraBold;
+}
+#home .container .caption h2 {
+  font-family: Montserrat-ExtraLight;
+  font-weight: 200;
+  font-size: 3.75rem;
+}
+#home .container .caption h2 span {
+  font-family: Montserrat-Regular;
+  font-weight: 400;
+  font-size: 3.75rem;
+}
+#home .container .social-icon a {
+  margin: 2px;
+  color: #fff;
+  font-size: 14px;
+}
+#home .container .social-icon a i {
+  padding: 8px 9px;
+  border-radius: 50%;
+  background-color: #000;
+  transition: 0.3s;
+}
+#home .container .social-icon a:hover .facebook {
+  background-color: #1874f1;
+}
+#home .container .social-icon a:hover .twitter {
+  background-color: #269be7;
+}
+#home .container .social-icon a:hover .linkedin {
+  background-color: #0172b4;
+}
+#home .container .social-icon a:hover .behance {
+  background-color: #1d89f8;
+}
+#home .container .social-icon a:hover .youtube {
+  background-color: #b91e2c;
+}
+/* ----- end home ---- */
+
+/* --- start about --- */
+#about {
+  padding: 60px 0;
+}
+.imge-hero img {
+  width: 100%;
+  position: relative;
+  padding-left: 28px;
+}
+#about .imge-hero:after {
+  content: "";
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 0px;
+  bottom: -30px;
+  background-image: url(images/dots.png);
+  background-repeat: repeat;
+  z-index: -1;
+}
+#about .info h4 {
+  font-size: 30px;
+  font-family: Montserrat-ExtraBold;
+  font-weight: 800;
+  color: #343434;
+}
+#about .info .sub-title {
+  font-family: Poppins-Regular;
+  font-weight: 400;
+  font-size: 14px;
+  color: #999999;
+  letter-spacing: 2px;
+}
+#about .info p {
+  font-family: Poppins-Regular;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #748182;
+  padding-top: 20px;
+}
+.bttn {
+  margin-top: 50px;
+}
+.bttn a span {
+  transition: 0.5s;
+}
+.buton-bg {
+  background-color: #000000;
+  padding: 10px 25px;
+  color: #eee;
+}
+.buton-bg:hover {
+  background-color: #fff;
+  color: #000000;
+  border: solid 1px;
+}
+.but2 {
+  padding: 10px 25px;
+  color: #000000;
+  border: solid 1px;
+}
+.bttn .but2:hover {
+  background-color: #000000;
+  color: #fff;
+}
+#about .info p span {
+  font-family: Poppins-Bold;
+}
+.progress {
+  background: #f7f7f7;
+  -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+  height: 25px;
+}
+.progress-bar {
+  background-color: #000;
+}
+#about span {
+  font-family: Montserrat-Medium;
+  font-size: 13px;
+}
+#about .butn {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+}
+/* --- end about  ---- */
+
+/* - srecial heading - */
+.special-heading h2 {
+  font-family: Montserrat-VariableFon;
+  font-size: 40px;
+  font-weight: 900;
+  color: #343434;
+  position: relative;
+  display: inline;
+  z-index: 4;
+}
+.special-heading h2::before {
+  content: "";
+  width: 100%;
+  height: 30px;
+  background-image: url(images/dots.png);
+  background-repeat: repeat;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  z-index: -1;
+}
+/* ------------------- */
+
+/* - start services -- */
+#services {
+  padding: 60px 0;
+  background-color: #f7f7f7;
+}
+#services .servisec-box {
+  background-color: #fff;
+  box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+  margin: 5px 5px;
+  margin-left: 0;
+  transition: 0.5s;
+}
+.service-ico {
+  margin-bottom: 1.5rem;
+}
+.service-ico .ico-circle {
+  height: 60px;
+  width: 60px;
+  background-color: #f5f5f5;
+  font-size: 1.875rem;
+  border-radius: 50%;
+  line-height: 1.55;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  color: var(--icon-color);
+}
+#services .servisec-box:hover {
+  transform: scale(1.04);
+}
+#services .servisec-box:hover .ico-circle {
+  color: #fff;
+  background-color: #000;
+}
+#services .servisec-box .service-contant {
+  color: var(--p-serv-color);
+  padding: 0px 0.9375rem;
+}
+#services h4 {
+  font-family: Montserrat-ExtraBold;
+  font-weight: 800;
+  font-size: 18px;
+  color: #343434;
+}
+#services p {
+  font-family: Poppins-Regular;
+  color: #748182;
+  font-size: 14px;
+}
+/* ---- end services --- */
+
+/* - start Portfolio --  */
+#Portfolio .nav-pills .nav-item {
+  padding: 0 10px;
+}
+#Portfolio .nav-pills .nav-link {
+  background-color: transparent;
+  position: relative;
+  font-family: Poppins-Regular;
+  font-weight: 400 !important;
+  color: #000;
+  padding: 0;
+}
+#Portfolio .nav-pills .active::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100% !important;
+  height: 2px;
+  background-color: #000;
+  transition: 0.5s;
+}
+#Portfolio .nav-pills .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  transition: 0.5s;
+}
+#Portfolio .nav-pills .nav-item:hover .nav-link::after {
+  width: 100%;
+  height: 2px;
+}
+/* -------------- */
+#Portfolio .item-overlay {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  transition: all 0.6s;
+}
+#Portfolio .item-imge:hover .item-overlay {
+  opacity: 1;
+}
+#Portfolio .item-overlay .info .title {
+  bottom: 8px;
+  transition: all 0.5s;
+  padding-bottom: 5px;
+  font-size: 12px;
+}
+#Portfolio .item-imge:hover .title {
+  bottom: 0px;
+}
+#Portfolio .item-overlay .info .icons {
+  top: 8px;
+  transition: all 0.5s;
+  font-size: 12px;
+  color: #fff;
+}
+.icon {
+  background-color: #000000;
+  padding: 7px 6px;
+  margin-right: 2px;
+  transition: 0.3s;
+}
+.icon-link {
+  background-color: #000000;
+  padding: 5px 9px;
+  margin-left: 2px;
+  transition: 0.3s;
+}
+.icons i {
+  color: #fff;
+  transition: 0.3s;
+}
+.icon-link:hover {
+  background-color: #fff;
+  border: solid 1px #000;
+}
+.icon-link:hover a i {
+  color: #000;
+}
+.icon:hover {
+  background-color: #fff;
+  border: solid 1px #000;
+}
+.icon:hover i {
+  color: #000;
+}
+#Portfolio .item-imge:hover .icons {
+  top: 0px;
+}
+#Portfolio .nav-item .nav-link {
+  color: #222222;
+  font-family: Poppins-Bold;
+}
+#Portfolio .info h6 {
+  color: #343434;
+  font-family: Montserrat-Bold;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+/* -- end Portfolio --  */
+
+/* start clinets */
+#clinets {
+  background-color: #f7f7f7;
+}
+#clinets .item {
+  padding: 0 7px;
+}
+#clinets .item p {
+  font-size: 15px;
+  font-family: Poppins-Regular;
+  line-height: 24px;
+  color: #748182;
+}
+#clinets .item h6 {
+  font-family: Montserrat-Bold;
+  font-weight: 600;
+  color: #343434;
+}
+#clinets .item span {
+  font-family: Poppins-Bold;
+  color: #888888;
+  line-height: 17px;
+  font-size: 12px;
+}
+#clinets .image {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  margin: 0 auto 13px;
+}
+.owl-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  text-align: center;
+}
+.owl-carousel button.owl-dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin: 0 6px;
+  background-color: #869791;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.owl-carousel button.owl-dot.active,
+.owl-carousel button.owl-dot:hover {
+  opacity: 1;
+}
+/* ------------------ */
+
+/* ------- start counter ---- */
+.counter {
+  padding: 50px 0;
+}
+.counter .counter-num p {
+  color: #000;
+}
+.counter .counter-num span {
+  color: #000;
+}
+.counter i {
+  font-size: 30px;
+  color: #343434 !important;
+}
+.counter p {
+  font-family: Montserrat-VariableFon;
+  font-weight: 900;
+  color: #343434 !important;
+}
+.counter span {
+  font-size: 15;
+  color: #748182 !important;
+  font-family: Poppins-SemiBold;
+}
+/* -------- end counter ------ */
+
+/* --------- start team ------ */
+#team {
+  background-color: #f7f7f7;
+  padding: 60px 0px;
+}
+#team .icon-link {
+  background-color: #000;
+}
+#team .item-imge .item-overlay {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  transition: all 0.5s;
+  transform: rotateY(180deg) scale(0.5, 0.5);
+}
+#team .item-imge {
+  overflow: hidden;
+}
+#team .item-imge img {
+  transition: 0.5s;
+}
+#team .item-imge:hover img {
+  transform: scale(1.2);
+}
+#team .box:hover .item-overlay {
+  transform: rotateY(0deg) scale(1, 1);
+  opacity: 1;
+}
+#team .text {
+  background-color: #5b5b5b;
+  color: #fff;
+  padding: 20px 0px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+#team .icon-link i {
+  color: #fff;
+  font-size: 20px;
+  padding: 6px 2px;
+  transition: 0.5s;
+}
+#team .icon-link:hover i {
+  color: #000;
+}
+#team .icon-link:hover {
+  background-color: #f4f4f4;
+}
+#team h4 {
+  font-family: Montserrat-Medium;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+#team h5 {
+  /* font-family:Montserrat-Bold;  */
+  font-family: Montserrat-Medium;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+/* ---------- end team ------- */
+
+/* -------- start contact ----- */
+#contact {
+  padding: 60px 0;
+  font-family: Poppins-Regular;
+}
+#contact h6 {
+  font-family: Montserrat-Bold;
+  color: #343434;
+}
+#contact p {
+  font-family: Poppins-Regular;
+  color: #748182;
+}
+#contact .form-control {
+  background-color: #f4f4f4;
+  border: none;
+  font-family: Poppins-Regular;
+  color: #748182;
+  font-size: 14px;
+}
+#contact a {
+  font-family: Poppins-Regular;
+  color: #748182;
+  font-size: 13px;
+}
+/*--------- form----- */
+#contact .form-control:focus {
+  color: var(--bs-body-color);
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+  background-color: #f7f7f7;
+}
+#contact .item:hover .ico-circle {
+  color: #fff;
+  background-color: #000;
+}
+#contact .ico-circle i {
+  font-size: 1.5625rem;
+}
+#contact .buton-bg {
+  padding: 10px 40px;
+}
+/* -------- end contact ----- */
+
+/* -------- start footer ----- */
+#footer {
+  background-color: #1c1c1c;
+  padding: 30px;
+}
+#footer p {
+  line-height: 1.6;
+  margin: 0;
+  font-size: 13px;
+  color: #748182;
+  font-family: Poppins-Regular;
+}
+/* -------- end footer ----- */
+
+/*---- small --- */
+@media (max-width: 767px) {
+  .container,
+  .container-sm {
+    max-width: 720px;
+  }
+  .item-imge img {
+    width: 100%;
+  }
+  #home .container .caption h2 {
+    font-family: Montserrat-ExtraLight;
+    font-weight: 200;
+    font-size: 2rem;
+  }
+  #home .container .caption h2 span {
+    font-family: Montserrat-Regular;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+}
